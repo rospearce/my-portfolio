@@ -50,7 +50,7 @@ body {
 } */
 
 .central {
-	width: 830px;
+	width: 600px;
 	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
@@ -58,6 +58,23 @@ body {
 
 .intro {
 	text-align: center;
+}
+
+.row {
+	/* order important so don't override new syntax with old */
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	height: auto;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	margin: 0;
 }
 
 .contact {

@@ -13,4 +13,10 @@ $(document).ready(function() {
         $(".title-wrapper").css("display", "block"); 
         $(".intro").css("display", "none");  
     }); 
-}); 
+});
+
+// instantiate lazy loading of images
+// after masonry layout
+
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();

@@ -79,7 +79,11 @@ body {
 }
 
 .active {
-	border-bottom: 2px solid #333333;
+	border-bottom: 3px solid #23ffda;
+}
+
+#nav {
+	margin-bottom: 20px;
 }
 
 .contact {
@@ -115,7 +119,16 @@ h2 {
 
 h3 {
 	font-family: 'Dosis', sans-serif;
-	font-size: 20px;
+	font-size: 17px;
+	font-weight: 400;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+h4 {
+	font-family: 'Dosis', sans-serif;
+	font-size: 18px;
 	font-weight: 700;
 	margin-top: 0;
 	margin-bottom: 0.5em;

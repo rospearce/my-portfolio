@@ -50,7 +50,7 @@ body {
 } */
 
 .central {
-	width: 600px;
+	width: 700px;
 	max-width: 100%;
 	margin-right: auto;
 	margin-left: auto;
@@ -75,6 +75,10 @@ body {
 	flex-direction: column;
 	flex-basis: 100%;
 	margin: 0;
+}
+
+.active {
+	border-bottom: 2px solid #333333;
 }
 
 .contact {

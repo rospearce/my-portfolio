@@ -20,3 +20,10 @@ $(document).ready(function() {
 
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 observer.observe();
+
+// FILTER PROJECTS
+
+$(".column").on("click", function () {
+    $(".column").removeClass("active");
+    $(this).addClass("active");
+});

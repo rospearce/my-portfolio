@@ -26,4 +26,12 @@ observer.observe();
 $(".column").on("click", function () {
     $(".column").removeClass("active");
     $(this).addClass("active");
+
+    let type = $(this).attr('class').split(' ')[1];
+
+    $(".grid-item").css("display", "none");
+
+    $(".grid-item." + type).css("display", "block");
+
+    console.log(type);
 });

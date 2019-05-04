@@ -21,22 +21,24 @@ $(document).ready(function() {
 const observer = lozad(); // lazy loads elements with default selector as '.lozad'
 observer.observe();
 
-// FILTER PROJECTS
+$(document).ready(function() {
+    // FILTER PROJECTS
+    $(".column").on("click", function () {
+        $(".column").removeClass("active");
+        $(this).addClass("active");
 
-$(".column").on("click", function () {
-    $(".column").removeClass("active");
-    $(this).addClass("active");
+        let type = $(this).attr('class').split(' ')[1];
 
-    let type = $(this).attr('class').split(' ')[1];
+        // filter projects
+        if (type == "all") {
+            $(".grid-item").css("display", "block");
+        } else {
+            $(".grid-item").css("display", "none");
+            $(".grid-item." + type).css("display", "block");
+        }
 
-    if (type == "all") {
-        $(".grid-item").css("display", "block");
-    } else {
-        $(".grid-item").css("display", "none");
-        $(".grid-item." + type).css("display", "block");
-    }
+        // refresh masonry layout
+        $('.grid').masonry();
 
-    // refresh masonry layout
-    $('.grid').masonry();
-
+    });
 });

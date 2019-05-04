@@ -29,9 +29,14 @@ $(".column").on("click", function () {
 
     let type = $(this).attr('class').split(' ')[1];
 
-    $(".grid-item").css("display", "none");
+    if (type == "all") {
+        $(".grid-item").css("display", "block");
+    } else {
+        $(".grid-item").css("display", "none");
+        $(".grid-item." + type).css("display", "block");
+    }
 
-    $(".grid-item." + type).css("display", "block");
+    // refresh masonry layout
+    $('.grid').masonry();
 
-    console.log(type);
 });

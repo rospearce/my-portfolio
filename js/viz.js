@@ -137,9 +137,18 @@ function updateChord() {
 
     // rejoin to data
     chord = chordGenerator(matrix);
-    console.log(chord);
     reorderChord(chord);
-    console.log(chord);
+
+    //reset gradients
+
+    svg.selectAll("linearGradient")
+        .data(chord)
+        .transition()
+        .duration(2000)
+        .attr("x1", function(d, i){ return innerRadius * Math.cos((d.source.endAngle-d.source.startAngle) / 2 + d.source.startAngle - Math.PI/2); })
+        .attr("y1", function(d, i){ return innerRadius * Math.sin((d.source.endAngle-d.source.startAngle) / 2 + d.source.startAngle - Math.PI/2); })
+        .attr("x2", function(d,i){ return innerRadius * Math.cos((d.target.endAngle-d.target.startAngle) / 2 + d.target.startAngle - Math.PI/2); })
+        .attr("y2", function(d,i){ return innerRadius * Math.sin((d.target.endAngle-d.target.startAngle) / 2 + d.target.startAngle - Math.PI/2); });
 
 
     svg.selectAll(".chord")
@@ -154,22 +163,25 @@ function updateChord() {
     .duration(2000)
     .attr("d", arcs);
 
-
-
-    
-    // g.selectAll(".group")
-    // .data(chord.groups)
-    // .selectAll("path")
-    // .data(function(d) { return d; })
-    // .transition()
-    // .duration(500)
-    // .attr("d", arcs);
-
 }
 
 updateChord();
 
-setTimeout(function(){ updateChord()}, 3000);
+// change data randomly every 5 sec
+
+function loop() {
+
+    setTimeout(function() {
+
+        updateChord();
+
+        loop();
+
+      // Every 3 sec
+    }, 6000);
+}
+
+//loop();
 
 
 

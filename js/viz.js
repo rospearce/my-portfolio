@@ -1,8 +1,7 @@
 // create dataset from selection
 
-const random = [10,10,25,50,15,40,15,55,10,5,10,10,5,15,35,10,20,30,25,50];
-const keys = ["first", "second", "third", "fourth", "fifth", "sixth"];
-const colors = ["#51addf", "#c582aa", "#005b9d", "#35a993", "#cc373c", "#f7d783"];
+const random = [10,10,25,45,15,40,15,55,10,5,10,10,5,15,35,10,20,30,25,50];
+const colors = ["#ff82da", "#ffaf98", "#ffe579", "#baf2a9", "#15bde8", "#b29de6"];
 
 let matrix = [];
 

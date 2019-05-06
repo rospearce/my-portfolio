@@ -39,9 +39,9 @@ var wrapper = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ") rotate(75)");
 
 var chordGenerator = d3.chord()
-    .padAngle(0.1)
-    .sortSubgroups(d3.descending)
-    .sortChords(d3.descending);
+    .padAngle(0.1);
+    
+    // .sortChords(d3.descending);
 
 var arcs = d3.arc()
     .innerRadius(innerRadius)
@@ -63,6 +63,9 @@ console.log(matrix);
 
 // rejoin to data
 var chord = chordGenerator(matrix);
+
+console.log(chord);
+console.log(chord.groups);
 
 var grads = svg.append("defs")
 .selectAll("linearGradient")
@@ -109,22 +112,32 @@ var g = wrapper.selectAll("g")
 g.append("path")
     .style("fill", function(d){ return color(d.index)})
     // .style("stroke", function(d){ return d3.rgb(color(d.index)).darker(); })
+    .attr("class", "arc")
     .attr("d", arcs)
     .style("opacity", 1);
+
+console.log(chord);
 
 function updateChord() {
 
     updateMatrix();
-    console.log(matrix);
 
     // rejoin to data
     chord = chordGenerator(matrix);
+    console.log(chord);
+    console.log(chord.groups);
 
     svg.selectAll(".chord")
     .data(chord)
     .transition()
     .duration(2000)
     .attr("d", ribbon);
+
+    svg.selectAll(".arc")
+    .data(chord.groups)
+    .transition()
+    .duration(2000)
+    .attr("d", arcs);
 
 
 
@@ -140,6 +153,9 @@ function updateChord() {
 }
 
 updateChord();
+
+setTimeout(function(){ updateChord()}, 3000);
+
 
 
 

@@ -39,8 +39,8 @@ console.log(matrix);
 
 var width = parseInt(d3.select("#viz").style("width")),
     height = width;
-    outerRadius = Math.min(width, height) * 0.5 - 150,
-    innerRadius = outerRadius - 30;
+    outerRadius = Math.min(width, height) * 0.5 -55
+    innerRadius = outerRadius - 20;
 
 var svg = d3.select("#viz").append("svg")
     .attr("width", width)
@@ -61,7 +61,7 @@ var arcs = d3.arc()
     .outerRadius(outerRadius);
 
 var ribbon = d3.ribbon()
-    .radius(250);
+    .radius(180);
 
 var color = d3.scaleOrdinal()
     .domain(d3.range(6))

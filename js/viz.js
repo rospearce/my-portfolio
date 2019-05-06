@@ -4,37 +4,42 @@ const random = [0,0,10,20,100,0,40,0,60,10,5,0,0,10,15,80,0,0,30,0,50];
 const keys = ["first", "second", "third", "fourth", "fifth", "sixth"];
 const colors = ["#51addf", "#c582aa", "#005b9d", "#35a993", "#cc373c", "#f7d783"];
 
-// let arr = {};
-
-// function updateArray () {
-//     for (var i = 0; i < 6; i++) {
-//         let key = keys[i];
-
-//         arr[key] = "[" + parseInt(random[Math.floor(Math.random() * random.length)])  + "," 
-//         + parseInt(random[Math.floor(Math.random() * random.length)]) + "," 
-//         + parseInt(random[Math.floor(Math.random() * random.length)])  + "," 
-//         + parseInt(random[Math.floor(Math.random() * random.length)])  + "," 
-//         + parseInt(random[Math.floor(Math.random() * random.length)])  + "," 
-//         + parseInt(random[Math.floor(Math.random() * random.length)])  + "]";
-
-//     }
-// }
-
-// updateArray();
-
-// var matrix = Object.values(arr);
-// var matrixKeys = Object.keys(arr);
+let arr = [];
 
 
-var matrix = [
-    [0, 293, 374, 380, 132, 128], // X
-    [251, 0, 285, 197, 398, 161], // Y
-    [403, 426, 0, 200,  198, 141], // Z
-    [454, 267, 291, 0, 294, 341], // C
-    [200, 665, 403, 326, 0, 286], // B
-    [210, 251, 211, 289, 247, 0] // A
-];
+function updateArray () {
+    for (var i = 0; i < 6; i++) {
+        arr[i] = [];
 
+        for (var j=0; j<6; j++) {
+            let num = random[Math.floor(Math.random() * random.length)];
+            arr[i].push(num);
+        }
+
+        // arr[i] = "[" + random[Math.floor(Math.random() * random.length)]  + "," 
+        // + random[Math.floor(Math.random() * random.length)] + "," 
+        // + random[Math.floor(Math.random() * random.length)]  + "," 
+        // + random[Math.floor(Math.random() * random.length)]  + "," 
+        // + random[Math.floor(Math.random() * random.length)] + "]";
+
+    }
+}
+
+updateArray();
+
+var matrix = Object.values(arr);
+
+
+// var matrix = [
+//     [0, 293, 374, 380, 132, 128], // X
+//     [251, 0, 285, 197, 398, 161], // Y
+//     [403, 426, 0, 200,  198, 141], // Z
+//     [454, 267, 291, 0, 294, 341], // C
+//     [200, 665, 403, 326, 0, 286], // B
+//     [210, 251, 211, 289, 247, 0] // A
+// ];
+
+console.log(arr);
 console.log(matrix);
 
 var width = parseInt(d3.select("#viz").style("width")),

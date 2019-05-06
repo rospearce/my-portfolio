@@ -26,10 +26,6 @@ function updateMatrix () {
     }
 }
 
-updateMatrix();
-
-console.log(matrix);
-
 var width = parseInt(d3.select("#viz").style("width")),
     height = width;
     outerRadius = Math.min(width, height) * 0.5 -55
@@ -47,8 +43,6 @@ var chordGenerator = d3.chord()
     .sortSubgroups(d3.descending)
     .sortChords(d3.descending);
 
-var chord = chordGenerator(matrix);
-
 var arcs = d3.arc()
     .innerRadius(innerRadius)
     .outerRadius(outerRadius);
@@ -63,6 +57,12 @@ var color = d3.scaleOrdinal()
 function getGradID(d){ 
     return "linkGrad-" + d.source.index + "-" + d.target.index; 
 }
+
+updateMatrix();
+console.log(matrix);
+
+// rejoin to data
+var chord = chordGenerator(matrix);
 
 var grads = svg.append("defs")
 .selectAll("linearGradient")
@@ -87,7 +87,7 @@ grads.append("stop")
     .attr("stop-color", function(d){ return color(d.target.index)});
 
 // making the ribbons
-d3.select("g")
+var chords = d3.select("g")
     .selectAll("path")
     .data(chord)
     .enter()
@@ -111,6 +111,35 @@ g.append("path")
     // .style("stroke", function(d){ return d3.rgb(color(d.index)).darker(); })
     .attr("d", arcs)
     .style("opacity", 1);
+
+function updateChord() {
+
+    updateMatrix();
+    console.log(matrix);
+
+    // rejoin to data
+    chord = chordGenerator(matrix);
+
+    svg.selectAll(".chord")
+    .data(chord)
+    .transition()
+    .duration(2000)
+    .attr("d", ribbon);
+
+
+
+    
+    // g.selectAll(".group")
+    // .data(chord.groups)
+    // .selectAll("path")
+    // .data(function(d) { return d; })
+    // .transition()
+    // .duration(500)
+    // .attr("d", arcs);
+
+}
+
+updateChord();
 
 
 

@@ -1,6 +1,6 @@
 // create dataset from selection
 
-const random = [0,0,10,20,100,0,40,0,60,10,5,0,0,10,15,80,0,0,30,0,50];
+const random = [10,10,25,50,15,40,15,55,10,5,10,10,5,15,35,10,20,30,25,50];
 const keys = ["first", "second", "third", "fourth", "fifth", "sixth"];
 const colors = ["#51addf", "#c582aa", "#005b9d", "#35a993", "#cc373c", "#f7d783"];
 
@@ -8,19 +8,21 @@ let arr = [];
 
 
 function updateArray () {
+
+    // clear array
+    arr = [];
+
     for (var i = 0; i < 6; i++) {
         arr[i] = [];
 
         for (var j=0; j<6; j++) {
             let num = random[Math.floor(Math.random() * random.length)];
-            arr[i].push(num);
+            if (j !== i) {
+                arr[i].push(num);
+            } else {
+                arr[i].push(0);
+            }
         }
-
-        // arr[i] = "[" + random[Math.floor(Math.random() * random.length)]  + "," 
-        // + random[Math.floor(Math.random() * random.length)] + "," 
-        // + random[Math.floor(Math.random() * random.length)]  + "," 
-        // + random[Math.floor(Math.random() * random.length)]  + "," 
-        // + random[Math.floor(Math.random() * random.length)] + "]";
 
     }
 }

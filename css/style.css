@@ -21,55 +21,6 @@ body {
 .grid-item--width2 { width: 410px}
 .grid-item--height2 { height: 410px; }
 
-.content {
-	opacity: 0;
-	padding: 15px;
-	width: calc(100% - 30px);
-	height: calc(100% - 30px);
-	background-color: rgba(230, 230, 230, 0.8);
-}
-
-.content:hover {
-	opacity: 1;
-	transition: opacity .25s ease-in-out;
-	-moz-transition: opacity .25s ease-in-out;
-	-webkit-transition: opacity .25s ease-in-out;
-}
-
-.central {
-	width: 700px;
-	max-width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.intro {
-	height: 500px;
-}
-
-#viz {
-	height: 500px;
-	width: 500px;
-}
-
-header {
-	width: 100%;
-	height: 50px;
-	background-color: rgba(255, 255, 255, 0.9);
-	position: fixed;
-	top: 0;
-	z-index: 9999;
-}
-
-#header-placeholder {
-	height: 50px;
-}
-
-header p {
-	text-align: center;
-	vertical-align: middle;
-}
-
 .row {
 	/* order important so don't override new syntax with old */
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -98,6 +49,57 @@ header p {
 	-ms-flex: 1 0 0;
 	-webkit-flex: 1 0 0;
 	flex: 1 0 0;
+}
+
+.content {
+	opacity: 0;
+	padding: 15px;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+	background-color: rgba(230, 230, 230, 0.8);
+}
+
+.content:hover {
+	opacity: 1;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+
+.central {
+	width: 700px;
+	max-width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#intro {
+	margin-right: 20px;
+	margin-left: 20px;
+	height: 500px;
+}
+
+/* #viz {
+	height: 500px;
+	width: 500px;
+} */
+
+header {
+	width: 100%;
+	height: 50px;
+	background-color: rgba(255, 255, 255, 0.9);
+	position: fixed;
+	top: 0;
+	z-index: 9999;
+}
+
+#header-placeholder {
+	height: 50px;
+}
+
+header p {
+	text-align: center;
+	vertical-align: middle;
 }
 
 .active {

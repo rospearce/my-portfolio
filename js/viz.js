@@ -25,14 +25,18 @@ function updateMatrix () {
     }
 }
 
-var width = parseInt(d3.select("#viz").style("width")),
-    height = width;
+// var width = parseInt(d3.select("#viz").style("width")),
+//     height = width;
+var width = 500;
+    height = 600;
     outerRadius = Math.min(width, height) * 0.5 -55
     innerRadius = outerRadius - 25;
 
 var svg = d3.select("#viz").append("svg")
-    .attr("width", width)
-    .attr("height", height);
+    .attr("viewBox", "0 0 " + (width) + " " + (height))
+    .attr("preserveAspectRatio", "xMidYMid meet");
+    // .attr("width", width)
+    // .attr("height", height);
 
 var wrapper = svg.append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ") rotate(75)");

@@ -28,7 +28,7 @@ function updateMatrix () {
 var width = parseInt(d3.select("#viz").style("width")),
     height = width;
     outerRadius = Math.min(width, height) * 0.5 -55
-    innerRadius = outerRadius - 20;
+    innerRadius = outerRadius - 25;
 
 var svg = d3.select("#viz").append("svg")
     .attr("width", width)
@@ -176,11 +176,10 @@ function loop() {
 
         loop();
 
-      // Every 3 sec
-    }, 6000);
+    }, 5000);
 }
 
-//loop();
+loop();
 
 
 

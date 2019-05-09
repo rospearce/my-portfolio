@@ -90,13 +90,8 @@ body {
 }
 
 #intro-text h5 {
-	margin-top: 3em;
+	margin-top: 2em;
 }
-
-/* #viz {
-	height: 500px;
-	width: 500px;
-} */
 
 header {
 	width: 100%;
@@ -141,6 +136,20 @@ button {
 		transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}
+
+button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
 }
 
 .contact {

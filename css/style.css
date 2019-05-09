@@ -36,6 +36,9 @@ body {
 	flex-direction: column;
 	flex-basis: 100%;
 	margin: 0;
+}
+
+#nav .column {
 	cursor: pointer;
 }
 
@@ -174,18 +177,18 @@ h4 {
 }
 
 h5 {
-	font-family: 'Merriweather', serif;
+	font-family: 'Crimson Text', serif;
 	font-weight: 300;
 	font-style: italic;
-	font-size: 40px;
+	font-size: 55px;
 	margin-top: 0;
 	margin-bottom: 0.5em;
 }
 
 p {
 	margin-top: 0.5em;
-	font-family: 'Merriweather', serif;
-	font-size: 12.5px;
+	font-family: 'Crimson Text', serif;
+	font-size: 15px;
 }
 
 footer div {

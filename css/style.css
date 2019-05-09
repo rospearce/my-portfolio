@@ -38,8 +38,13 @@ body {
 	margin: 0;
 }
 
-#nav .column {
+.control {
 	cursor: pointer;
+	font-family: "Dosis", sans-serif;
+}
+
+.control:hover {
+	color: #15bde8;
 }
 
 .large {
@@ -140,7 +145,7 @@ button {
 
 button:hover,
 button:focus {
-    background: #0053ba;
+    background: #13a6ca;
 }
 
 button:focus {
@@ -224,11 +229,6 @@ p {
 	font-family: 'Crimson Text', serif;
 	font-size: 15px;
 	color: #333333;
-}
-
-header p {
-	font-family: "Dosis", sans-serif;
-	cursor: pointer;
 }
 
 footer div {

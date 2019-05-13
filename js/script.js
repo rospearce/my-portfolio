@@ -23,8 +23,8 @@ observer.observe();
 
 $(document).ready(function() {
     // FILTER PROJECTS
-    $(".column").on("click", function () {
-        $(".column").removeClass("active");
+    $("#portfolio-nav .column").on("click", function () {
+        $("#portfolio-nav .column").removeClass("active");
         $(this).addClass("active");
 
         let type = $(this).attr('class').split(' ')[1];
@@ -41,4 +41,24 @@ $(document).ready(function() {
         $('.grid').masonry();
 
     });
+
+    // NAVIGATION
+    $("#top-nav .control").on("click", function () {
+
+        $("#top-nav .column").removeClass("active");
+        $(this).parent().addClass("active");
+
+        let name = $(this).attr('class').split(' ')[1];
+
+        // anchor scroll
+        function scrollToAnchor(x){
+            let aTag = $("a[name='"+ x +"']");
+            $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+        }
+
+        scrollToAnchor(name);
+
+
+    });
+
 });

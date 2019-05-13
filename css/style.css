@@ -111,11 +111,6 @@ header {
 	height: 50px;
 }
 
-header p {
-	text-align: center;
-	vertical-align: middle;
-}
-
 .active {
 	border-bottom: 3px solid #15bde8;
 }
@@ -193,6 +188,8 @@ h2 {
 	letter-spacing: 0.4em;
 	text-align: center;
 	color: #333333;
+	margin-block-start: 1.33em;
+	margin-block-end: 1.33em;
 }
 
 h3 {
@@ -227,8 +224,28 @@ h5 {
 p {
 	margin-top: 0.5em;
 	font-family: 'Crimson Text', serif;
-	font-size: 15px;
+	font-size: 18px;
 	color: #333333;
+	margin-block-start: 1.33em;
+	margin-block-end: 1.33em;
+}
+
+.portfolio p {
+	font-size: 15px;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+}
+
+header p {
+	font-size: 17px;
+	text-align: center;
+	vertical-align: middle;
+	margin-block-start: 0.7em;
+	margin-block-end: 0.7em;
+}
+
+footer p {
+	font-size: 15px;
 }
 
 footer div {

@@ -58,8 +58,29 @@ $(document).ready(function() {
 
         scrollToAnchor(name);
 
-
     });
+
+    // UPDATE NAVBAR STYLE
+
+    let windowHeight = $(window).height(),
+    windowMiddle = windowHeight * 0.5;
+    console.log(windowMiddle);
+
+    $(window).on('scroll', function() {
+        $('a').each(function() {
+            let name = $(this).attr('name');
+            if (typeof name !== typeof undefined && name !== false) {
+                let thisTop = $(this).offset().top - $(window).scrollTop();
+                console.log(thisTop);
+                if (Math.abs(windowMiddle - thisTop) <= 10) {
+                    console.log("hello");
+                    $("#top-nav .column").removeClass("active");
+                    $("." + name).parent().addClass("active");
+                }
+            };
+        });
+    });
+
 
     // HOME BUTTON
     $("#home").on("click", function () {

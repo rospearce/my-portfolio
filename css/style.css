@@ -36,6 +36,8 @@ body {
 	flex-direction: column;
 	flex-basis: 100%;
 	margin: 0;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .control {
@@ -48,9 +50,9 @@ body {
 }
 
 .large {
-	-ms-flex: 3 0 0;
-	-webkit-flex: 3 0 0;
-	flex: 3 0 0;
+	-ms-flex: 5 0 0;
+	-webkit-flex: 5 0 0;
+	flex: 5 0 0;
 }
 
 .small {
@@ -119,6 +121,10 @@ header {
 	margin-bottom: 20px;
 }
 
+#home {
+	cursor: pointer;
+}
+
 button {
 	display: inline-block;
     border: none;
@@ -176,7 +182,7 @@ h1 {
 	font-weight: 600px;
 	margin-top: 0.25em;
 	margin-bottom: 0.25em;
-	margin-left: 0.3em;
+	/* margin-left: 0.3em; */
 	line-height: 1em;
 	color: #333333;
 }
@@ -230,7 +236,7 @@ p {
 	margin-block-end: 1.33em;
 }
 
-.portfolio p {
+.grid p {
 	font-size: 15px;
 	margin-block-start: 1em;
 	margin-block-end: 1em;

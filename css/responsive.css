@@ -1,5 +1,67 @@
+@media all and (max-width: 1280px) {
+    .large {
+        -ms-flex: 4 0 0;
+        -webkit-flex: 4 0 0;
+        flex: 4 0 0;
+    }
+}
+
+@media all and (max-width: 980px) {
+
+    header {
+        height: 46px;
+    }
+
+    #header-placeholder {
+        height: 46px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h5 {
+        font-size: 50px;
+    }
+
+    #intro {
+        height: 450px;
+    }
+
+    #intro-text {
+        max-width: 310px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .central {
+        width: 650px;
+    }
+
+    .large {
+        -ms-flex: 3 0 0;
+        -webkit-flex: 3 0 0;
+        flex: 3 0 0;
+    }
+
+}
+
 @media all and (max-width: 736px) {
+
+
     h3 {
         font-size: 15px;
     }
+
+
 }

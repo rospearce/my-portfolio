@@ -53,7 +53,7 @@ $(document).ready(function() {
         // anchor scroll
         function scrollToAnchor(x){
             let aTag = $("a[name='"+ x +"']");
-            $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+            $('html,body').animate({scrollTop: aTag.offset().top -60},'slow');
         }
 
         scrollToAnchor(name);
@@ -61,4 +61,13 @@ $(document).ready(function() {
 
     });
 
+    // HOME BUTTON
+    $("#home").on("click", function () {
+        $('html,body').animate({scrollTop: 0},'slow');
+    });
+
 });
+
+function goToContact () {
+    $('html,body').animate({scrollTop: $("a[name='contact']").offset().top -60},'slow');
+}

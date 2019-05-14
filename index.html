@@ -47,7 +47,7 @@
                 <div class="column">
                     <div id="intro-text">
                         <h5>Communicate your data clearly and beautifully</h5>
-                        <button onclick="goToContact();">Get in touch</button>
+                        <button class="button" onclick="goToContact();">Get in touch</button>
                     </div>
                 </div>
                 <div id="viz" class="column">
@@ -275,14 +275,27 @@
         <div class="central">
             <a name="contact"></a>
             <h2>CONTACT</h2>
-            <form id="contactform" method="POST">
-                <input type="text" name="name" placeholder="Your name">
-                <input type="email" name="_replyto" placeholder="Your email address">
-                <input type="hidden" name="_subject" value="Website contact" />
-                <textarea name="message" placeholder="Your message"></textarea>
-                <input type="text" name="_gotcha" style="display:none" />
-                <input type="submit" value="Send">
-            </form>
+            <div class="container">
+                <form id="contactform" method="POST">
+                    <div class="row">
+                        <div class="column">                    
+                            <label for="name">Name:</label>
+                            <input type="text" name="name" placeholder="Your name">
+                        </div>
+                        <div class="column">
+                            <label for="email">Email:</label>
+                            <input type="email" name="_replyto" placeholder="hello@example.com">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <input type="hidden" name="_subject" value="Website contact" />
+                        <label for="message">Message:</label>
+                        <textarea name="message" placeholder="Your message"></textarea>
+                    </div>
+                    <input type="text" name="_gotcha" style="display:none" />
+                    <input class="button" type="submit" value="Send">
+                </form>
+            </div>
             <!-- add email with javascript for added security -->
             <script>
                 var contactform =  document.getElementById('contactform');
@@ -315,7 +328,7 @@
                     </a>
                 </li>
             </ul>
-        </div>
+            </div>
         <footer>
             <div>
                 <p>Website by Rosamund Pearce.</p>

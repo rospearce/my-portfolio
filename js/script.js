@@ -45,8 +45,8 @@ $(document).ready(function() {
     // NAVIGATION
     $("#top-nav .control").on("click", function () {
 
-        $("#top-nav .column").removeClass("active");
-        $(this).parent().addClass("active");
+        // $("#top-nav .column").removeClass("active");
+        // $(this).parent().addClass("active");
 
         let name = $(this).attr('class').split(' ')[1];
 
@@ -62,24 +62,24 @@ $(document).ready(function() {
 
     // UPDATE NAVBAR STYLE
 
-    let windowHeight = $(window).height(),
-    windowMiddle = windowHeight * 0.5;
-    console.log(windowMiddle);
+    // let windowHeight = $(window).height(),
+    // windowMiddle = windowHeight * 0.5;
+    // console.log(windowMiddle);
 
-    $(window).on('scroll', function() {
-        $('a').each(function() {
-            let name = $(this).attr('name');
-            if (typeof name !== typeof undefined && name !== false) {
-                let thisTop = $(this).offset().top - $(window).scrollTop();
-                console.log(thisTop);
-                if (Math.abs(windowMiddle - thisTop) <= 10) {
-                    console.log("hello");
-                    $("#top-nav .column").removeClass("active");
-                    $("." + name).parent().addClass("active");
-                }
-            };
-        });
-    });
+    // $(window).on('scroll', function() {
+    //     $('a').each(function() {
+    //         let name = $(this).attr('name');
+    //         if (typeof name !== typeof undefined && name !== false) {
+    //             let thisTop = $(this).offset().top - $(window).scrollTop();
+    //             console.log(thisTop);
+    //             if (Math.abs(windowMiddle - thisTop) <= 5) {
+    //                 console.log("hello");
+    //                 $("#top-nav .column").removeClass("active");
+    //                 $("." + name).parent().addClass("active");
+    //             }
+    //         };
+    //     });
+    // });
 
 
     // HOME BUTTON
